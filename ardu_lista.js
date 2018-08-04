@@ -43,15 +43,40 @@ serialport.list(function (err, ports) {
     i = i + 1;
 	}
   });
- client.set('port_number', i, redis.print);
+ client.set('number_of_ports', i, redis.print);
 });
 }
 
 
  
 if (key && key.name == 'c') {  
+console.log(" ---------- ")
 
-	console.log('connect')
+process.stdin.on('keypress', function (ch, key) {
+
+if (ch == '0') {
+
+client.get('port0', function (error, result) {
+    if (error) {
+        console.log(error);
+        throw error;
+    }
+
+var myPort = new serialport(result, {
+   baudRate: 9600,
+   // look for return and newline at the end of each data packet:
+   //parser: SerialPort.parsers.readline("\n")
+ });
+ 
+//myPort.on('open', onPortOpen);
+
+});
+
+}
+
+
+});	
+	
 
 } 
 }); 
@@ -59,4 +84,6 @@ if (key && key.name == 'c') {
  
 process.stdin.setRawMode(true);
 process.stdin.resume();
+
+
 
