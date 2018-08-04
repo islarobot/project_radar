@@ -5,8 +5,8 @@ client.on('connect', function() {
     console.log('Redis client connected');
 });
 
-
-client.get('port0', function (error, result) {
+client.set('my test key', 'my test value', redis.print);
+client.get('my test key', function (error, result) {
     if (error) {
         console.log(error);
         throw error;
