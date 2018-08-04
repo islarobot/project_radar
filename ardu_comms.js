@@ -1,15 +1,15 @@
-var classes = require('./classes.js')
+	//var classes = require('./classes.js')
 var io = require('socket.io-client');
 var serverUrl = 'http://localhost:8080';
 var conn = io.connect(serverUrl);
-console.log('c4_ardu running');
+console.log('USB running');
 
 //envio id
 conn.emit('id', 'c4_ardu', function(resp, data) {
     //console.log(message_object);
 });
 
-var port_arg = process.argv[2];
+var port_arg = "pepe";
 
 
 var SerialPort = require('serialport');// include the library
@@ -44,11 +44,6 @@ function onData(d)
 
 
 
-  
-var message_local = new classes.message_object('c4_ardu','c1_main','4','');
-var message_json = JSON.stringify(message_local);
-
-conn.send(message_json, function(resp, data) {});
 
 
 //recibo información

@@ -1,2 +1,2 @@
-gnome-terminal -- sh -c 'nodejs main.js; exec bash'
+gnome-terminal -- sh -c 'nodejs web_server.js; exec bash'
 
