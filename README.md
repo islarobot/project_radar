@@ -1,2 +1,0 @@
-# islarobot
-ss
