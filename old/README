@@ -1,0 +1,22 @@
+
+
+PROYECTO RADAR CON ARDUINO
+
+
+1. INSTALL DEPENDENCIES BASH
+
+2. run.sh
+
+3. open chrome localhost:8080
+
+4. plug arduino
+
+
+
+
+---------------------------
+
+1. Two files
+
+
+   1. main.js: web server. 2. runs list_ports.js. 3. comms management.
